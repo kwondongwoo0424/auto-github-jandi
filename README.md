@@ -22,14 +22,14 @@ auto-github-jandi/
 
 1. **저장소 클론**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/kwondongwoo0424/auto-github-jandi.git
    cd auto-github-jandi
    ```
 
-2. **Git 설정 확인**
+2. **Git 설정 (본인의 이름과 이메일로 변경)**
    ```bash
-   git config --global user.name "Your Name"
-   git config --global user.email "your-email@example.com"
+   git config --global user.name "본인의 이름"
+   git config --global user.email "본인의 이메일@example.com"
    ```
 
 3. **스크립트 실행**
