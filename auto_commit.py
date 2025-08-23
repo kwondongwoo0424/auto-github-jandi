@@ -1,7 +1,16 @@
 import os
 import threading
 
-n = 1
+def read_count():
+    try:
+        with open("./count.txt", 'r', encoding="utf8") as f:
+            return int(f.read().strip())
+    except (FileNotFoundError, ValueError):
+        return 1
+
+def save_count(n):
+    with open("./count.txt", 'w', encoding="utf8") as f:
+        f.write(str(n))
 
 def set_interval(func, sec):
     def func_wrapper():
@@ -21,6 +30,9 @@ def autoCommit():
     os.system("git push origin main")
     
     n+=1
+    save_count(n)
+
+n = read_count()
 
 autoCommit()
 set_interval(autoCommit, 86400) #24시간 마다 실행
